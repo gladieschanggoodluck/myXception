@@ -4,4 +4,6 @@ The project uses deep learning to identify images of invasive and non-invasive s
 Motivation
 According to some, Hydrilla poses an ecological threat. It has the ability to grow in various conditions and this gives it an advantage over native plants. Infestations of hydrilla can be harmful to fish populations as well. They can cause oxygen depletion zones which can be harmful to fish.
 ## Streamlit -app for model prediction
-![Prediction](https://www.youtube.com/watch?v=l4NJezvOt_o)
+<br>
+<img height = "700" src=""/>
+<br>
