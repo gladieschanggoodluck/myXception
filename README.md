@@ -5,5 +5,5 @@ Motivation
 According to some, Hydrilla poses an ecological threat. It has the ability to grow in various conditions and this gives it an advantage over native plants. Infestations of hydrilla can be harmful to fish populations as well. They can cause oxygen depletion zones which can be harmful to fish.
 ## Streamlit -app for model prediction
 <br>
-<img height = "700" src=""/>
+<img height = "700" src="https://github.com/gladieschanggoodluck/myXception/blob/main/image/VAplantPrediction.JPG"/>
 <br>
