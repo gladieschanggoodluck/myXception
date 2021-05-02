@@ -26,11 +26,11 @@ classes_and_models = {
         "model_name": "myXception_model" # change to be your model name
     },
     "model_2": {
-        "classes": sorted(base_classes + ["donut"]),
+        "classes": sorted(base_classes + ["not_plant"]),
         "model_name": "myXception_model"
     },
     "model_3": {
-        "classes": sorted(base_classes + ["donut", "not_food"]),
+        "classes": sorted(base_classes + ["donut", "not_plant"]),
         "model_name": "myXception_model"
     }
 }
