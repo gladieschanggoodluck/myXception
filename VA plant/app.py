@@ -120,7 +120,7 @@ if session_state.pred_button:
                                 correct=False,
                                 user_label=session_state.correct_class))
 
-# TODO: code could be cleaned up to work with a main() function...
+
 
 #if __name__ == "__main__":
 #    main()
