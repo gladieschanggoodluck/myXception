@@ -47,9 +47,9 @@ def make_prediction(image, model, class_names):
 # Pick the model version
 choose_model = st.sidebar.selectbox(
     "Pick model you'd like to use",
-    ("Model 1 (5 VA plants)", # original 10 classes
-     "Model 2 (5 VA plants)", # original 10 classes + donuts
-     "Model 3 (5 VA plants classes + non-VA class)") # 11 classes (same as above) + not_food class
+    ("Model 1 (5 VA plants)", # original 5 classes
+     "Model 2 (5 VA plants)", # original 5 classes + non-plants
+     "Model 3 (5 VA plants classes + non-VA class)") # 6 classes (same as above) + not_VA plants
 )
 
 # Model choice logic
