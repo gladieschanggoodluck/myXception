@@ -13,16 +13,16 @@ import streamlit as st
 import tensorflow as tf
 from utils import load_and_prep_image, classes_and_models, update_logger, predict_json
 
-# Setup environment credentials (you'll need to change these)
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gladies-playground-4edbcb2e6e37.json" # change for your GCP key
-PROJECT = "gladies-playground" # change for your GCP project
-REGION = "us-central1" # change for your GCP region (where your model is hosted)
+# Setup environment credentials (change these to your GCP credentials)
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gladies-playground-4edbcb2e6e37.json" # change to your GCP key
+PROJECT = "gladies-playground" # change to your GCP project
+REGION = "us-central1" # change to your GCP region (where your model is hosted)
 
-### Streamlit code (works as a straigtht-forward script) ###
+### Streamlit code to build the app ###
 st.title("Welcome to VA plants 🍔📸")
 st.header("Identify VA plants - Hydrilla, Watercress, Duckeweed, Arrowhead, Grassy Mud Plaintain")
 
-@st.cache # cache the function so predictions aren't always redone (Streamlit refreshes every click)
+@st.cache # cache the function so new prediction for each refreshing (Streamlit refreshes every click)
 def make_prediction(image, model, class_names):
     """
     Takes an image and uses model (a trained TensorFlow model) to make a
@@ -33,7 +33,7 @@ def make_prediction(image, model, class_names):
      pred_conf (model confidence)
     """
     image = load_and_prep_image(image)
-    # Turn tensors into int16 (saves a lot of space, ML Engine has a limit of 1.5MB per request)
+    # Need to turn tensors into int16 (saves a lot of space because ML Engine has a limit of 1.5MB per request)
     image = tf.cast(tf.expand_dims(image, axis=0), tf.int16)
     # image = tf.expand_dims(image, axis=0)
     preds = predict_json(project=PROJECT,
@@ -52,7 +52,7 @@ choose_model = st.sidebar.selectbox(
      "Model 3 (5 VA plants classes + non-VA class)") # 6 classes (same as above) + not_VA plants
 )
 
-# Model choice logic
+# Model choice conditional branch
 if choose_model == "Model 1 (5 VA plants)":
     CLASSES = classes_and_models["model_1"]["classes"]
     MODEL = classes_and_models["model_1"]["model_name"]
